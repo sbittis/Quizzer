@@ -1,0 +1,11 @@
+<div>
+    <input id="name-input" type="text" [(ngModel)]="playerName" placeholder="Player name" [disabled]="initialized" />
+    <a class="button" (click)="setName()" *ngIf="!initialized">Set name</a>
+</div>
+
+<div *ngIf="question">
+    <h2 [innerHTML]="question.question"></h2>
+    <div id="possible-answers">
+        <div *ngFor="let answer of question.possibleAnswers" [innerHTML]="answer" (click)="makeGuess(answer)"></div>
+    </div>
+</div>

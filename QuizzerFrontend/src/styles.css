@@ -1,0 +1,43 @@
+body {
+    background-color: steelblue;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 128px;
+}
+
+.button {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+    transition: all .3s;
+}
+
+.button:hover::after {
+    background-color: #0af;
+}
+
+#possible-answers {
+    margin: 18px;
+}

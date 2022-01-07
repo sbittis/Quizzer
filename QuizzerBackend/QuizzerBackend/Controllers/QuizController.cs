@@ -26,17 +26,5 @@
             var question = await this.repository.GetNextQuestion();
             await hubContext.Clients.All.SendAsync("GoToQuestion", question);
         }
-
-        //[HttpGet("MakeGuess/{player}/{answer}")]
-        //public async Task MakeGuess(string player, string answer)
-        //{
-        //    await hubContext.Clients.All.SendAsync("GuessMade", player, answer);
-        //}
-
-        //[HttpGet("SetPlayerName/{playerName}")]
-        //public async Task SetPlayerName(string playerName)
-        //{
-        //    await hubContext.Clients.All.SendAsync("SetPlayerName", playerName);
-        //}
     }
 }

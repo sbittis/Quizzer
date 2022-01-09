@@ -11,20 +11,20 @@
     [Route("[controller]")]
     public class QuizController : ControllerBase
     {
-        private readonly IHubContext<QuizHub> hubContext;
+        private readonly IHubContext<QuizHub> _hubContext;
 
         private readonly QuizQuestionRepository repository = new();
 
         public QuizController(IHubContext<QuizHub> hubContext)
         {
-            this.hubContext = hubContext;
+            _hubContext = hubContext;
         }
 
         [HttpGet("Next")]
         public async Task NextQuestion()
         {
             var question = await this.repository.GetNextQuestion();
-            await hubContext.Clients.All.SendAsync("GoToQuestion", question);
+            await _hubContext.Clients.All.SendAsync("GoToQuestion", question);
         }
     }
 }

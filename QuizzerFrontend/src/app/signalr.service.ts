@@ -64,7 +64,7 @@ export class SignalRService {
       this.guessMade$.next({ player, guess });
     });
 
-    this.hubConnection.on('SetPlayerName', (playerName: string) => {
+    this.hubConnection.on('PlayerNameSet', (playerName: string) => {
       this.setPlayerName$.next(playerName);
     });
   }

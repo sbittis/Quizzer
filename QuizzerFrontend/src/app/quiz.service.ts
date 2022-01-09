@@ -18,18 +18,6 @@ export class QuizService {
       .pipe(catchError(this.handleError)).subscribe();
   }
 
-  // makeGuess(guess: string, player: string) {
-  //   return this.http
-  //     .get(this.url + "MakeGuess/" + player + "/" + guess)
-  //     .pipe(catchError(this.handleError)).subscribe();
-  // }
-
-  // setPlayerName(playerName: string) {
-  //   return this.http
-  //     .get(this.url + "SetPlayerName/" + playerName)
-  //     .pipe(catchError(this.handleError)).subscribe();
-  // }
-
   private handleError(error: Response): Observable<never> {
     return throwError(error || 'Server error');
   }

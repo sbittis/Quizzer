@@ -8,12 +8,12 @@
     {
         public async Task MakeGuess(string player, string answer)
         {
-            await this.Clients.All.SendAsync("GuessMade", player, answer);
+            await Clients.All.SendAsync("GuessMade", player, answer);
         }
 
         public async Task SetPlayerName(string playerName)
         {
-            await this.Clients.All.SendAsync("SetPlayerName", playerName);
+            await Clients.All.SendAsync("PlayerNameSet", playerName);
         }
     }
 }
